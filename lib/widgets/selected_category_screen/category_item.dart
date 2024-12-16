@@ -93,8 +93,8 @@ class CategoryItem extends StatelessWidget {
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
                         side: BorderSide(
-                          color: Colors.grey.shade300, // Lighter border color
-                          width: 0.8, // Thinner border width
+                          color: Colors.grey.shade300,
+                          width: 0.8,
                         ),
                         fixedSize: const Size(70, 40),
                         shape: BeveledRectangleBorder(
@@ -102,17 +102,19 @@ class CategoryItem extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: SvgPicture.asset('assets/icons/heart.svg',
-                          colorFilter: ColorFilter.mode(
-                              Colors.grey.shade600, BlendMode.srcIn)),
+                      child: SvgPicture.asset(
+                        'assets/icons/heart.svg',
+                        colorFilter: ColorFilter.mode(
+                            Colors.grey.shade600, BlendMode.srcIn),
+                      ),
                     ),
                     const SizedBox(width: 10),
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
                         backgroundColor: const Color(0xFF0BCE83),
                         side: BorderSide(
-                          color: Colors.grey.shade300, // Match border color
-                          width: 0.8, // Thinner border width
+                          color: Colors.grey.shade300,
+                          width: 0.8,
                         ),
                         fixedSize: const Size(70, 40),
                         shape: BeveledRectangleBorder(
@@ -120,9 +122,11 @@ class CategoryItem extends StatelessWidget {
                         ),
                       ),
                       onPressed: () {},
-                      child: SvgPicture.asset('assets/icons/shopping-cart.svg',
-                          colorFilter: const ColorFilter.mode(
-                              Colors.white, BlendMode.srcIn)),
+                      child: SvgPicture.asset(
+                        'assets/icons/shopping-cart.svg',
+                        colorFilter: const ColorFilter.mode(
+                            Colors.white, BlendMode.srcIn),
+                      ),
                     )
                   ],
                 ),

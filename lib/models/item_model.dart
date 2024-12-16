@@ -1,4 +1,3 @@
-// Updated ItemModel class
 import 'package:delivery_app/models/category_model.dart';
 
 class ItemModel {

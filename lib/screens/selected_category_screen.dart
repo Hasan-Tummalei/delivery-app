@@ -10,9 +10,12 @@ class SelectedCategoryScreen extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
+      backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       appBar: PreferredSize(
-        preferredSize: const Size.fromHeight(200),
+        preferredSize: const Size.fromHeight(120),
         child: AppBar(
+          forceMaterialTransparency: true,
+          backgroundColor: const Color.fromARGB(255, 239, 239, 239),
           flexibleSpace: Stack(
             children: [
               Positioned(
@@ -25,7 +28,7 @@ class SelectedCategoryScreen extends StatelessWidget {
                 ),
               ),
               Positioned(
-                bottom: 85,
+                bottom: 0,
                 left: 20,
                 right: 10,
                 child: Text(
@@ -33,18 +36,22 @@ class SelectedCategoryScreen extends StatelessWidget {
                   style: Theme.of(context).textTheme.titleLarge,
                 ),
               ),
-              const Positioned(
-                bottom: 25,
-                left: 20,
-                right: 20,
-                child: CustomizedSearchBar(),
-              )
             ],
           ),
         ),
       ),
-      body: SelectedCategory(
-        selectedCategory: selectedCat.category,
+      body: Column(
+        children: [
+          const Padding(
+            padding: EdgeInsets.all(20.0),
+            child: CustomizedSearchBar(),
+          ),
+          Expanded(
+            child: SelectedCategory(
+              selectedCategory: selectedCat.category,
+            ),
+          )
+        ],
       ),
     );
   }

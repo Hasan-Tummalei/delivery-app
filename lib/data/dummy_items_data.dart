@@ -1,9 +1,6 @@
 import 'package:delivery_app/models/category_model.dart';
 import 'package:delivery_app/models/item_model.dart';
 
-// Updated dummy data extended with missing fields
-// Updated dummy data extended with missing fields
-// Updated dummy data extended with longer descriptions
 List<ItemModel> dummyItems = const [
   // Fruits
   ItemModel(

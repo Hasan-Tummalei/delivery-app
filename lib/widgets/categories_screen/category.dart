@@ -33,7 +33,6 @@ class Category extends StatelessWidget {
                 image: AssetImage(categoryItem.image),
                 fit: BoxFit.cover,
                 height: 140,
-                // width: double.infinity,
               ),
             ),
             Positioned(
