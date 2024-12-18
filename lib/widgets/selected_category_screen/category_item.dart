@@ -3,6 +3,7 @@ import 'package:delivery_app/widgets/selected_item_screen/image_slider_bottom_sh
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
 import 'package:transparent_image/transparent_image.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CategoryItem extends StatelessWidget {
   const CategoryItem({super.key, required this.item});
@@ -26,28 +27,31 @@ class CategoryItem extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Padding(
-      padding: const EdgeInsets.symmetric(vertical: 10, horizontal: 12),
+      padding: EdgeInsets.symmetric(vertical: 15.w, horizontal: 20.w),
       child: Row(
         mainAxisSize: MainAxisSize.max,
         children: [
-          InkWell(
-            child: Container(
-              margin: const EdgeInsets.only(right: 20),
-              clipBehavior: Clip.hardEdge,
-              decoration: BoxDecoration(borderRadius: BorderRadius.circular(9)),
-              child: FadeInImage(
-                placeholder: MemoryImage(
-                  kTransparentImage,
+          Expanded(
+            child: InkWell(
+              child: Container(
+                margin: EdgeInsets.only(right: 10.w),
+                clipBehavior: Clip.hardEdge,
+                decoration:
+                    BoxDecoration(borderRadius: BorderRadius.circular(9.r)),
+                child: FadeInImage(
+                  placeholder: MemoryImage(
+                    kTransparentImage,
+                  ),
+                  image: AssetImage(item.itemImage),
+                  width: 177.w,
+                  height: 128.w,
+                  fit: BoxFit.cover,
                 ),
-                image: AssetImage(item.itemImage),
-                width: 177,
-                height: 128,
-                fit: BoxFit.cover,
               ),
+              onTap: () {
+                openDetailsSheet(context);
+              },
             ),
-            onTap: () {
-              openDetailsSheet(context);
-            },
           ),
           Expanded(
             child: Column(
@@ -55,15 +59,18 @@ class CategoryItem extends StatelessWidget {
               children: [
                 Row(
                   children: [
-                    Text(
-                      item.itemTitle,
-                      textAlign: TextAlign.end,
-                      style: Theme.of(context).textTheme.bodyLarge,
+                    Expanded(
+                      child: Text(
+                        overflow: TextOverflow.ellipsis,
+                        item.itemTitle,
+                        textAlign: TextAlign.start,
+                        style: Theme.of(context).textTheme.bodyLarge,
+                      ),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 2,
+                SizedBox(
+                  height: 2.w,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -73,19 +80,19 @@ class CategoryItem extends StatelessWidget {
                       style: Theme.of(context)
                           .textTheme
                           .bodyLarge!
-                          .copyWith(fontSize: 22),
+                          .copyWith(fontSize: 22.sp),
                     ),
                     Text(
                       ' € /${item.itemUnit}',
                       style: Theme.of(context)
                           .textTheme
                           .bodyMedium!
-                          .copyWith(fontSize: 16),
+                          .copyWith(fontSize: 16.sp),
                     ),
                   ],
                 ),
-                const SizedBox(
-                  height: 12,
+                SizedBox(
+                  height: 12.w,
                 ),
                 Row(
                   mainAxisAlignment: MainAxisAlignment.start,
@@ -94,11 +101,10 @@ class CategoryItem extends StatelessWidget {
                       style: OutlinedButton.styleFrom(
                         side: BorderSide(
                           color: Colors.grey.shade300,
-                          width: 0.8,
+                          width: 0.8.w,
                         ),
-                        fixedSize: const Size(70, 40),
                         shape: BeveledRectangleBorder(
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(4.r),
                         ),
                       ),
                       onPressed: () {},
@@ -108,17 +114,17 @@ class CategoryItem extends StatelessWidget {
                             Colors.grey.shade600, BlendMode.srcIn),
                       ),
                     ),
-                    const SizedBox(width: 10),
+                    SizedBox(width: 10.w),
                     OutlinedButton(
                       style: OutlinedButton.styleFrom(
                         backgroundColor: const Color(0xFF0BCE83),
                         side: BorderSide(
                           color: Colors.grey.shade300,
-                          width: 0.8,
+                          width: 0.8.w,
                         ),
-                        fixedSize: const Size(70, 40),
+                        // fixedSize: Size(78.w, 40.w),
                         shape: BeveledRectangleBorder(
-                          borderRadius: BorderRadius.circular(4),
+                          borderRadius: BorderRadius.circular(4.r),
                         ),
                       ),
                       onPressed: () {},

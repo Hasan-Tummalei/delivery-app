@@ -1,19 +1,38 @@
-import 'package:delivery_app/screens/tabs_screen.dart';
+import 'package:delivery_app/router/app_router.dart';
 import 'package:delivery_app/theme/theme.dart';
+import 'package:device_preview/device_preview.dart';
+import 'package:flutter/foundation.dart';
 import 'package:flutter/material.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 void main() {
-  runApp(const DeliveryApp());
+  runApp(DevicePreview(
+    enabled: !kReleaseMode,
+    builder: (context) => DeliveryApp(),
+  ));
 }
 
 class DeliveryApp extends StatelessWidget {
-  const DeliveryApp({super.key});
+  final AppRouter _appRouter = AppRouter();
+  DeliveryApp({
+    super.key,
+  });
   @override
   Widget build(BuildContext context) {
-    return MaterialApp(
-        debugShowCheckedModeBanner: false,
-        title: 'Flutter Demo',
-        theme: AppTheme.lightTheme,
-        home: const TabsScreen());
+    return ScreenUtilInit(
+      designSize: const Size(414, 896),
+      minTextAdapt: true,
+      splitScreenMode: true,
+      builder: (_, child) {
+        return MaterialApp.router(
+          locale: DevicePreview.locale(context),
+          builder: DevicePreview.appBuilder,
+          debugShowCheckedModeBanner: false,
+          title: 'Delivery App',
+          theme: AppTheme.lightTheme,
+          routerConfig: _appRouter.config(),
+        );
+      },
+    );
   }
 }

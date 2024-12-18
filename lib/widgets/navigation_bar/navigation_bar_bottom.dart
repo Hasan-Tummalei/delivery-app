@@ -10,6 +10,8 @@ class NavigationBarBottom extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return NavigationBar(
+      indicatorColor: const Color.fromARGB(255, 239, 239, 239),
+      labelBehavior: NavigationDestinationLabelBehavior.alwaysHide,
       backgroundColor: const Color.fromARGB(255, 239, 239, 239),
       onDestinationSelected: selectPage,
       destinations: <Widget>[

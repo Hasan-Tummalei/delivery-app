@@ -1,6 +1,7 @@
 import 'package:delivery_app/models/item_model.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class DetailsSection extends StatefulWidget {
   final ItemModel item;
@@ -16,13 +17,13 @@ class _DetailsSectionState extends State<DetailsSection> {
   Widget build(BuildContext context) {
     return Container(
       height: MediaQuery.of(context).size.height * 0.686,
-      decoration: const BoxDecoration(
+      decoration: BoxDecoration(
         color: Colors.white,
         borderRadius: BorderRadius.only(
-          topLeft: Radius.circular(16),
-          topRight: Radius.circular(16),
+          topLeft: Radius.circular(30.r),
+          topRight: Radius.circular(30.r),
         ),
-        boxShadow: [
+        boxShadow: const [
           BoxShadow(
             color: Colors.black12,
             blurRadius: 10,
@@ -31,17 +32,19 @@ class _DetailsSectionState extends State<DetailsSection> {
         ],
       ),
       child: Padding(
-        padding: const EdgeInsets.symmetric(vertical: 30, horizontal: 20),
+        padding: EdgeInsets.symmetric(vertical: 30.w, horizontal: 20.w),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
-          mainAxisSize: MainAxisSize.max,
           children: [
             Text(
               widget.item.itemTitle,
-              style: Theme.of(context).textTheme.titleLarge,
+              style: Theme.of(context)
+                  .textTheme
+                  .titleLarge!
+                  .copyWith(fontSize: 30.sp),
             ),
-            const SizedBox(
-              height: 20,
+            SizedBox(
+              height: 20.w,
             ),
             Row(children: [
               Text(
@@ -49,43 +52,47 @@ class _DetailsSectionState extends State<DetailsSection> {
                 style: Theme.of(context)
                     .textTheme
                     .titleLarge!
-                    .copyWith(fontSize: 32),
+                    .copyWith(fontSize: 32.sp),
               ),
               Text(
                 ' € / ${widget.item.itemUnit}',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
-                    fontSize: 24,
+                    fontSize: 24.sp,
                     letterSpacing: -0.8,
                     fontWeight: FontWeight.w400),
               )
             ]),
-            const SizedBox(
-              height: 8,
+            SizedBox(
+              height: 8.w,
             ),
             Text('~ ${widget.item.weightPerPiece}g / piece',
                 style: Theme.of(context).textTheme.bodyMedium!.copyWith(
                     color: const Color(0xFF06BE77),
-                    fontSize: 17,
+                    fontSize: 17.sp,
                     fontWeight: FontWeight.w500)),
-            const SizedBox(
-              height: 22,
+            SizedBox(
+              height: 22.w,
             ),
             Text(
               widget.item.country,
               style: Theme.of(context).textTheme.bodyLarge!.copyWith(
-                    fontSize: 22,
+                    fontSize: 22.sp,
                     letterSpacing: -0.41,
                   ),
             ),
-            Text(
-              widget.item.description,
-              style: Theme.of(context)
-                  .textTheme
-                  .bodyMedium!
-                  .copyWith(letterSpacing: -0.41, height: 1.5),
+            Expanded(
+              child: SingleChildScrollView(
+                child: Text(
+                  widget.item.description,
+                  style: Theme.of(context)
+                      .textTheme
+                      .bodyMedium!
+                      .copyWith(letterSpacing: -0.41, height: 1.5.w),
+                ),
+              ),
             ),
-            const SizedBox(
-              height: 60,
+            SizedBox(
+              height: 30.w,
             ),
             Row(
               mainAxisAlignment: MainAxisAlignment.center,
@@ -93,12 +100,13 @@ class _DetailsSectionState extends State<DetailsSection> {
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     side: BorderSide(
-                      color: Colors.grey.shade300, // Lighter border color
-                      width: 0.8, // Thinner border width
+                      color: Colors.grey.shade300, 
+                      width: 0.8, 
                     ),
-                    fixedSize: const Size(78, 56),
+                    fixedSize:
+                        Size(MediaQuery.of(context).size.width * 0.22, 56.w),
                     shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(4.r),
                     ),
                   ),
                   onPressed: () {},
@@ -106,17 +114,18 @@ class _DetailsSectionState extends State<DetailsSection> {
                       colorFilter: ColorFilter.mode(
                           Colors.grey.shade600, BlendMode.srcIn)),
                 ),
-                const SizedBox(width: 10),
+                SizedBox(width: 10.w),
                 OutlinedButton(
                   style: OutlinedButton.styleFrom(
                     backgroundColor: const Color(0xFF0BCE83),
                     side: BorderSide(
-                      color: Colors.grey.shade300, // Match border color
-                      width: 0.8, // Thinner border width
+                      color: Colors.grey.shade300, 
+                      width: 0.8, 
                     ),
-                    fixedSize: const Size(250, 56),
+                    fixedSize:
+                        Size(MediaQuery.of(context).size.width * 0.62, 56.w),
                     shape: BeveledRectangleBorder(
-                      borderRadius: BorderRadius.circular(4),
+                      borderRadius: BorderRadius.circular(4.r),
                     ),
                   ),
                   onPressed: () {},
@@ -126,8 +135,8 @@ class _DetailsSectionState extends State<DetailsSection> {
                       SvgPicture.asset('assets/icons/shopping-cart.svg',
                           colorFilter: const ColorFilter.mode(
                               Colors.white, BlendMode.srcIn)),
-                      const SizedBox(
-                        width: 15,
+                      SizedBox(
+                        width: 15.w,
                       ),
                       const Text(
                         'ADD TO CART',

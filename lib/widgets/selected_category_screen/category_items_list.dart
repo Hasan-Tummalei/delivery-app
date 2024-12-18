@@ -14,10 +14,7 @@ class CategoryItemsList extends StatelessWidget {
   Widget build(BuildContext context) {
     return SliverList(
       delegate: SliverChildBuilderDelegate(
-        (context, index) => Padding(
-          padding: const EdgeInsets.symmetric(vertical: 8.0),
-          child: CategoryItem(item: itemList[index]),
-        ),
+        (context, index) => CategoryItem(item: itemList[index]),
         childCount: itemList.length,
       ),
     );

@@ -1,6 +1,7 @@
 import 'package:delivery_app/widgets/buttons_customization/outliens_btn.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/flutter_svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class CustomizedSearchBar extends StatefulWidget {
   const CustomizedSearchBar({super.key});
@@ -25,18 +26,18 @@ class SearchBarState extends State<CustomizedSearchBar> {
               hintStyle: Theme.of(context)
                   .textTheme
                   .bodyMedium!
-                  .copyWith(fontSize: 17, fontWeight: FontWeight.w400),
+                  .copyWith(fontSize: 17.sp, fontWeight: FontWeight.w400),
               prefixIcon: Padding(
-                padding: const EdgeInsets.symmetric(horizontal: 12.0),
+                padding: EdgeInsets.symmetric(horizontal: 11.0.w),
                 child: SvgPicture.asset(
                   'assets/icons/search.svg',
-                  width: 18,
-                  height: 18,
+                  width: 18.w,
+                  height: 18.w,
                 ),
               ),
-              contentPadding: const EdgeInsets.symmetric(
-                vertical: 10.0,
-                horizontal: 30.0,
+              contentPadding: EdgeInsets.symmetric(
+                vertical: 10.0.w,
+                horizontal: 20.0.w,
               ),
               border: borderBtn,
               enabledBorder: enabledBtn,

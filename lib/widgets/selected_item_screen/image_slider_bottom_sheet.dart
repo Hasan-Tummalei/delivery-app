@@ -25,17 +25,14 @@ class _ImageSliderBottomSheetState extends State<ImageSliderBottomSheet> {
       height: MediaQuery.of(context).size.height,
       decoration: const BoxDecoration(
         color: Colors.white,
-        borderRadius: BorderRadius.vertical(top: Radius.circular(20)),
       ),
       child: Stack(
         children: [
-          // Image Slider
           Positioned(
-            top: 0,
             left: 0,
             right: 0,
             child: SizedBox(
-              height: MediaQuery.of(context).size.height * 0.6,
+              height: MediaQuery.of(context).size.height * 0.399,
               child: PageView.builder(
                 controller: _pageController,
                 onPageChanged: (index) {
@@ -62,7 +59,7 @@ class _ImageSliderBottomSheetState extends State<ImageSliderBottomSheet> {
           ),
 
           Positioned(
-            top: 240,
+            bottom: MediaQuery.of(context).size.height * 0.686 + 20,
             left: 0,
             right: 0,
             child: Row(

@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_svg/svg.dart';
+import 'package:flutter_screenutil/flutter_screenutil.dart';
 
 class Filter extends StatefulWidget {
   const Filter({super.key, required this.filterValue});
@@ -37,8 +38,8 @@ class FilterState extends State<Filter> {
                   colorFilter: const ColorFilter.mode(
                       Color(0xFF6C0EE4), BlendMode.srcIn),
                 ),
-                const SizedBox(
-                  width: 8,
+                SizedBox(
+                  width: 8.w,
                 ),
                 Text(widget.filterValue)
               ],
