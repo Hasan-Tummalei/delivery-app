@@ -14,7 +14,7 @@ part of 'app_router.dart';
 class SelectedCategoryRoute extends PageRouteInfo<SelectedCategoryRouteArgs> {
   SelectedCategoryRoute({
     key,
-    required CategoryModel selectedCat,
+    required CategoryEntity selectedCat,
     List<PageRouteInfo>? children,
   }) : super(
           SelectedCategoryRoute.name,
@@ -47,7 +47,7 @@ class SelectedCategoryRouteArgs {
 
   final key;
 
-  final CategoryModel selectedCat;
+  final CategoryEntity selectedCat;
 
   @override
   String toString() {
