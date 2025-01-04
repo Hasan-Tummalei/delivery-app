@@ -1,39 +1,39 @@
-import 'package:delivery_app/models/category_model.dart';
+import 'package:delivery_app/features/categories/data/models/category_model_modified.dart';
 
 List<CategoryModel> dummyCategoryData = const [
   CategoryModel(
     title: 'Vegetables',
-    category: CategoryType.vegetables,
+    category: 'vegetables',
     image: 'assets/images/vegetables.png',
     stock: 30,
   ),
   CategoryModel(
     title: 'Fruits',
-    category: CategoryType.fruits,
+    category: 'fruits',
     image: 'assets/images/fruits.png',
     stock: 20,
   ),
   CategoryModel(
     title: 'Bread',
-    category: CategoryType.bread,
+    category: "bread",
     image: 'assets/images/bread.png',
     stock: 15,
   ),
   CategoryModel(
     title: 'Sweets',
-    category: CategoryType.sweets,
+    category: "sweets",
     image: 'assets/images/sweets.png',
     stock: 10,
   ),
   CategoryModel(
     title: 'Pasta',
-    category: CategoryType.pasta,
+    category: "pasta",
     image: 'assets/images/pasta.png',
     stock: 25,
   ),
   CategoryModel(
     title: 'Drinks',
-    category: CategoryType.drinks,
+    category: "drinks",
     image: 'assets/images/drinks.png',
     stock: 50,
   ),

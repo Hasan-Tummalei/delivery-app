@@ -1,4 +1,4 @@
-import 'package:delivery_app/models/category_model.dart';
+import 'package:delivery_app/features/categories/data/models/category_model_modified.dart';
 
 const Map<String, CategoryType> responseMapper = {
   'vegetables': CategoryType.vegetables,
