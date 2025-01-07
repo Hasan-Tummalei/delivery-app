@@ -8,7 +8,9 @@ import 'package:delivery_app/features/categories/data/datasources/local_resource
 import 'package:delivery_app/features/categories/data/datasources/remote_resource.dart';
 import 'package:delivery_app/features/categories/domain/entities/category.dart';
 import 'package:delivery_app/features/categories/domain/repositories/categories_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: CategoriesRepository)
 class CategoriesRepositoryImplementation implements CategoriesRepository {
   final RemoteResource remoteResource;
   final LocalResource localResource;

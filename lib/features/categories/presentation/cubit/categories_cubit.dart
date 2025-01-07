@@ -5,10 +5,12 @@ import 'package:delivery_app/features/categories/domain/entities/category.dart';
 import 'package:delivery_app/features/categories/domain/usecases/get_all_categories.dart';
 import 'package:dio/dio.dart';
 import 'package:flutter/foundation.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 
 part 'categories_state.dart';
 
+@injectable
 class CategoriesCubit extends Cubit<CategoriesState> {
   final GetAllCategoriesUseCase getAllcategories;
 

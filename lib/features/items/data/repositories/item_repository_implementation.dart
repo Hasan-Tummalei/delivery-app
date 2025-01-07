@@ -8,7 +8,9 @@ import 'package:delivery_app/features/items/data/datasources/local_resource.dart
 import 'package:delivery_app/features/items/data/datasources/remote_resource.dart';
 import 'package:delivery_app/features/items/domain/entities/item.dart';
 import 'package:delivery_app/features/items/domain/repositories/item_repository.dart';
+import 'package:injectable/injectable.dart';
 
+@LazySingleton(as: ItemRepository)
 class ItemRepositoryImplementation implements ItemRepository {
   final RemoteResourceItems remoteResource;
   final LocalResourceItems localResource;

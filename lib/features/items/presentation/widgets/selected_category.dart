@@ -5,6 +5,7 @@ import 'package:delivery_app/features/items/presentation/widgets/filters_list.da
 import 'package:flutter/material.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 import '../../../../data/dummy_filters_data.dart';
+import 'category_item_skeleton.dart';
 
 class SelectedCategory extends StatelessWidget {
   final CategoryType selectedCategory;
@@ -23,8 +24,11 @@ class SelectedCategory extends StatelessWidget {
               child: FiltersList(filterList: dummyFilters),
             ),
             if (state is ItemsLoading) ...[
-              const SliverToBoxAdapter(
-                child: Center(child: CircularProgressIndicator()),
+              SliverList(
+                delegate: SliverChildBuilderDelegate(
+                  (context, index) => const CategoryItemSkeleton(),
+                  childCount: 10,
+                ),
               ),
             ] else if (state is ItemsError) ...[
               SliverToBoxAdapter(

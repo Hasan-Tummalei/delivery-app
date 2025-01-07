@@ -13,7 +13,7 @@ part of 'app_router.dart';
 /// [SelectedCategoryScreen]
 class SelectedCategoryRoute extends PageRouteInfo<SelectedCategoryRouteArgs> {
   SelectedCategoryRoute({
-    key,
+    Key? key,
     required CategoryEntity selectedCat,
     List<PageRouteInfo>? children,
   }) : super(
@@ -45,7 +45,7 @@ class SelectedCategoryRouteArgs {
     required this.selectedCat,
   });
 
-  final key;
+  final Key? key;
 
   final CategoryEntity selectedCat;
 

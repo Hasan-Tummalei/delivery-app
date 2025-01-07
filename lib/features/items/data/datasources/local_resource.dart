@@ -3,6 +3,7 @@ import 'dart:convert';
 import 'package:dartz/dartz.dart';
 import 'package:delivery_app/core/errors/exceptions.dart';
 import 'package:delivery_app/features/items/data/models/item_model.dart';
+import 'package:injectable/injectable.dart';
 import 'package:shared_preferences/shared_preferences.dart';
 
 abstract class LocalResourceItems {
@@ -10,10 +11,12 @@ abstract class LocalResourceItems {
   Future<Unit> cacheItemsInDevice(List<ItemModel> categoryModelsList);
 }
 
+@LazySingleton(as: LocalResourceItems)
 class LocalResourceItemsImplSharedPreferences implements LocalResourceItems {
   final SharedPreferences sharedPreferences;
 
-  const LocalResourceItemsImplSharedPreferences({required this.sharedPreferences});
+  const LocalResourceItemsImplSharedPreferences(
+      {required this.sharedPreferences});
   @override
   Future<Unit> cacheItemsInDevice(List<ItemModel> itemsToBeCached) {
     List<Map<String, dynamic>> itemModelsToJson = itemsToBeCached

@@ -3,11 +3,13 @@ import 'package:delivery_app/core/errors/errors_strings.dart';
 import 'package:delivery_app/core/errors/failures.dart';
 import 'package:delivery_app/features/items/domain/entities/item.dart';
 import 'package:delivery_app/features/items/domain/usecases/get_all_items.dart';
+import 'package:injectable/injectable.dart';
 import 'package:meta/meta.dart';
 import 'package:dio/dio.dart';
 
 part 'items_state.dart';
 
+@injectable
 class ItemsCubit extends Cubit<ItemsState> {
   final GetAllItemsUseCase getAllItems;
 
