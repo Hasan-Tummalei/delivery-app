@@ -1,7 +1,8 @@
 import 'package:auto_route/auto_route.dart';
-import 'package:delivery_app/screens/tabs_screen.dart';
-import 'package:delivery_app/screens/selected_category_screen.dart';
-import 'package:delivery_app/models/category_model.dart';
+import 'package:delivery_app/features/categories/domain/entities/category.dart';
+import 'package:delivery_app/features/categories/presentation/pages/tabs_screen.dart';
+import 'package:delivery_app/features/items/presentation/pages/selected_category_screen.dart';
+import 'package:flutter/material.dart';
 
 part 'app_router.gr.dart';
 

@@ -13,8 +13,8 @@ part of 'app_router.dart';
 /// [SelectedCategoryScreen]
 class SelectedCategoryRoute extends PageRouteInfo<SelectedCategoryRouteArgs> {
   SelectedCategoryRoute({
-    key,
-    required CategoryModel selectedCat,
+    Key? key,
+    required CategoryEntity selectedCat,
     List<PageRouteInfo>? children,
   }) : super(
           SelectedCategoryRoute.name,
@@ -45,9 +45,9 @@ class SelectedCategoryRouteArgs {
     required this.selectedCat,
   });
 
-  final key;
+  final Key? key;
 
-  final CategoryModel selectedCat;
+  final CategoryEntity selectedCat;
 
   @override
   String toString() {
